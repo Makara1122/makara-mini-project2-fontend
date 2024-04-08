@@ -1,0 +1,15 @@
+version: '3'
+services:
+  makara:
+    image: nextjs-makara-mini2:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3203:3000
+    networks:
+      - data_analytics
+networks:
+  data_analytics:
+    external: true  
